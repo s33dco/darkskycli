@@ -1,3 +1,5 @@
+#!/usr/local/bin/node
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').load();
 }
