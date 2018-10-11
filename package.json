@@ -1,6 +1,6 @@
 {
   "name": "darkskycli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "get the weather report from the dark sky api for anyplace, anytime from the CLI",
   "main": "cli.js",
   "dependencies": {
