@@ -9,7 +9,23 @@ First add the package,
 
 Secondly find where the package is installed, on a mac with node installed via Homebrew this will be /usr/local/lib/node_modules. Create a file in the darkskycli directory .env (use .env.example as a template), add the api keys for [Google](https://developers.google.com/maps/documentation/geocoding/get-api-key) (geolocation) and [Dark Sky](https://darksky.net/dev/register) (weather api). Save the file and you're good to go.
 
-Executable from the CLI four arguements are accepted, place, when, langauage, units. 
+# Run from the command line parsing options, 
+
+weather in Paris
+
+`weather -p paris`
+
+weather in Paris at Christmas
+
+`weather -p paris -d 25dec2018`
+
+weather in Barcelona for New Years in Catalan ? 
+
+`weather -p Barcelona -d 01jan2019 -l ca`
+
+need help ?
+
+`weather -h`
 
 Units are automatically set based on geographic location, set to us for imperial, si for metric or uk2 if you like your temperature in celcius but your distance in miles.
 
