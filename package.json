@@ -22,6 +22,9 @@
   ],
   "author": "s33dco",
   "license": "MIT",
+  "bin": {
+    "weather": "./cli.js"
+  },
   "bugs": {
     "url": "https://github.com/s33dco/darkskycli/issues"
   },
