@@ -61,12 +61,12 @@ axios.get(geocodeUrl, {timeout: 5000}).then((response) => {
 	let weatherUrl = `https://api.darksky.net/forecast/${process.env.DARK_SKY_API_KEY}/${lat},${lng},${when}?units=${units}&lang=${lang}`;
 	return axios.get(weatherUrl, {timeout: 5000});
 }).then((response) => {
- 	let reportDate 	        = response.data.daily.time;
+ 	let reportDate 	        = response.data.daily.data[0].time;
 	let temperature 				= response.data.currently.temperature;
 	let apparentTemperature = response.data.currently.apparentTemperature;
 	let summary							=	response.data.currently.summary;
 	let dailySummary				=	response.data.daily.data[0].summary;
-	console.log(moment(reportDate).format('dddd, MMMM Do YYYY'));
+	console.log(moment.unix(reportDate).format('dddd, MMMM Do YYYY'));
 	console.log(`${summary},${temperature} ${apparentTemperature}.`);
 	console.log(`${dailySummary}.\n`);
 }).catch((e) => {
