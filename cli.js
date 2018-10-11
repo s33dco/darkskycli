@@ -56,8 +56,8 @@ axios.get(geocodeUrl, {timeout: 5000}).then((response) => {
 	let lat = response.data.results[0].geometry.location.lat;
 	let lng = response.data.results[0].geometry.location.lng;
 	console.log(`\n${response.data.results[0].formatted_address}`);
-	let weatherUrl = `https://api.darksky.net/forecast/${process.env.DARK_SKY_API_KEY}/${lat},${lng},${when}?units=${units}&lang=${lang}`;
-	return axios.get(weatherUrl);
+	let weatherUrl = `https://apidarkskynet/forecast/${process.env.DARK_SKY_API_KEY}/${lat},${lng},${when}?units=${units}&lang=${lang}`;
+	return axios.get(weatherUrl, {timeout: 5000});
 }).then((response) => {
  	let reportDate 	        = response.data.daily.time;
 	let temperature 				= response.data.currently.temperature;
