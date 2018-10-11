@@ -1,0 +1,29 @@
+{
+  "name": "darkskycli",
+  "version": "1.0.0",
+  "description": "get the weather report from the dark sky api for anyplace, anytime from the CLI",
+  "main": "cli.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.1.0",
+    "moment": "^2.22.2",
+    "yargs": "^12.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s33dco/darkskycli.git"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "s33dco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/s33dco/darkskycli/issues"
+  },
+  "homepage": "https://github.com/s33dco/darkskycli#readme"
+}

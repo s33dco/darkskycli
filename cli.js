@@ -44,7 +44,6 @@ let lang  = argv.langauge;
 let units = argv.units;
 let when  = moment(`${date}`, 'DDMMMYYYY').unix();
 let where = encodeURIComponent(argv.place);
-console.log(when);
 
 let geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?key=${process.env.GOOGLE_API_KEY}&address=${where}`;
 
@@ -60,19 +59,20 @@ axios.get(geocodeUrl, {timeout: 5000}).then((response) => {
 	let weatherUrl = `https://api.darksky.net/forecast/${process.env.DARK_SKY_API_KEY}/${lat},${lng},${when}?units=${units}&lang=${lang}`;
 	return axios.get(weatherUrl);
 }).then((response) => {
-		if (response.error) {
-			throw new Error(response.error);
-		}
-   	let reportDate 	        = response.data.currently.time;
-		let temperature 				= response.data.currently.temperature;
-		let apparentTemperature = response.data.currently.apparentTemperature;
-		let summary							=	response.data.currently.summary;
-		console.log(moment(reportDate).format('DDMMMYYYY'));
-		console.log(`${summary},${temperature} ${apparentTemperature}.\n`);
+ 	let reportDate 	        = response.data.daily.time;
+	let temperature 				= response.data.currently.temperature;
+	let apparentTemperature = response.data.currently.apparentTemperature;
+	let summary							=	response.data.currently.summary;
+	let dailySummary				=	response.data.daily.data[0].summary;
+	console.log(moment(reportDate).format('dddd, MMMM Do YYYY'));
+	console.log(`${summary},${temperature} ${apparentTemperature}.`);
+	console.log(`${dailySummary}.\n`);
 }).catch((e) => {
-	if (e.code === 'ENOTFOUND') {
-		console.log('could not connect to api servers.');
-	} else {
-		console.log(e.message);
-	}
+	if (e.response) {
+	  console.log(e.response.data.error);
+    } else if (e.request) {
+      console.log('could not connect to api servers.');
+    } else {
+      console.log(e.message);
+    }
 });
