@@ -4,10 +4,10 @@
 
 First add the package,
 
-`npm -i darkskycli --global`
+`npm -i darkskycli`
 
 
-Secondly create a file in the darkskycli directory .env (use .env.example as a template), add the api keys for [Google](https://developers.google.com/maps/documentation/geocoding/get-api-key) (geolocation) and [Dark Sky](https://darksky.net/dev/register) (weather api). Save the file and you're good to go.
+Secondly find where the package is installed, on a mac with node installed via Homebrew this will be /usr/local/lib/node_modules. Rename .env.example to .env, adding the api keys for [Google](https://developers.google.com/maps/documentation/geocoding/get-api-key) (geolocation) and [Dark Sky](https://darksky.net/dev/register) (weather api). Save the file and you're good to go.
 
 # Run from the command line parsing options, 
 
