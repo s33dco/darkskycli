@@ -1,12 +1,13 @@
-Welcome to Dark Sky CLI!
+### Welcome to Dark Sky CLI!
 
-Check the weather for anytime, anywhere right from your terminal.
+### Check the weather for anytime, anywhere right from your terminal.
 
 First add the package,
 
-npm -i darkskycli --global
+`npm -i darkskycli --global`
 
-Secondly find where the package is installed, on a mac with node installed via Homebrew this will be /usr/local/lib/node_modules. Create a file in the darkskycli directory .env , add the api keys for Google geolocation and Dark Sky. Save the file and you're good to go.
+
+Secondly find where the package is installed, on a mac with node installed via Homebrew this will be /usr/local/lib/node_modules. Create a file in the darkskycli directory .env (use .env.example as a template), add the api keys for [Google](https://developers.google.com/maps/documentation/geocoding/get-api-key) (geolocation) and [Dark Sky](https://darksky.net/dev/register) (weather api). Save the file and you're good to go.
 
 Executable from the CLI four arguements are accepted, place, when, langauage, units. 
 
@@ -14,5 +15,5 @@ Units are automatically set based on geographic location, set to us for imperial
 
 Language defaults to English and accepts most ISO 639-1 two letter language codes.
 
-For full details visit the Dark Sky API docs.
+For full details visit the [Dark Sky API](https://darksky.net/dev/docs) docs.
 
