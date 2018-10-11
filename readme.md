@@ -11,7 +11,7 @@ Secondly find where the package is installed, on a mac with node installed via H
 
 # Run from the command line parsing options, 
 
-weather in Paris
+weather in Paris today
 
 `weather -p paris`
 
